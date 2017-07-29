@@ -1,0 +1,110 @@
+<html>
+	<head>
+		<!-- meta tags to scale the page on a mobile phone -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<title>Buggy Controller</title>
+
+		<style>
+			/* remove padding from page so everything fits */
+			body {
+				padding: 0;
+				margin: 0;
+			}
+
+			/* make table span whole page, edge to edge */
+			table {
+				width: 100vw;
+				height: 100vh;
+				padding: 0;
+				margin: 0;
+			}
+
+			td {
+				padding: 5px;
+			}
+
+			/* make buttons fill their space */
+			button {
+				width: 100%;
+				height: 100%;
+				font-size: 2em; /* bigger font */
+			}
+
+			#forward {
+				background: #0f0;
+			}
+
+			#left {
+				background: #00f;
+				color: #fff;
+			}
+
+			#right {
+				background: #00f;
+				color: #fff;
+			}
+
+			#stop {
+				background: #f00;
+				color: #fff;
+			}
+		</style>
+	</head>
+	<body>
+		<table>
+			<colgroup>
+				<!-- make every cell equal size -->
+				<!-- 100% / 3 columns = 33% -->
+				<!-- 100% / 2 rows = 50% -->
+				<col style="width: 33%; height: 50%;">
+				<col style="width: 33%; height: 50%;">
+			</colgroup>
+			<tr>
+				<!-- rowspan makes the button take up 2 rows -->
+				<td rowspan="2">
+					<button id="left">Left</button>
+				</td>
+				<td>
+					<button id="forward">Forwards</button>
+				</td>
+				<td rowspan="2">
+					<button id="right">Right</button>
+				</td>
+			</tr>
+			<tr>
+				<!-- cell spans from above row -->
+				<td>
+					<button id="stop">Stop</button>
+				</td>
+				<!-- cell spans from above row -->
+			</tr>
+		</table>
+
+		<!-- load jquery to check for button presses and make requests -->
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+		<script>
+			// when the forward button is pressed
+			$("#forward").click(function() {
+				// make a request to the server which
+				// will activate the robot.forward() function
+				$.get("/forward");
+			});
+
+			// similarly for the below
+
+			$("#left").click(function() {
+				$.get("/left");
+			});
+
+			$("#right").click(function() {
+				$.get("/right");
+			});
+
+			$("#stop").click(function() {
+				$.get("/stop");
+			});
+		</script>
+	</body>
+</html>
