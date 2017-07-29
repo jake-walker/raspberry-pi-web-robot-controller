@@ -3,7 +3,7 @@ A simple web-based Raspberry Pi Robot Controller
 
 <img src="robot.jpg" width="250px">
 
-I was lucky enough to win a trip to the Raspberry Pi Pioneers Summer Camp at Google HQ, and while I was there I needed to write a simple Python program to let me control the robot I built in just an hour (including testing time!) so I recreated what I made and put it on GitHub for people to check out (because I had to rewrite it all because I left my SD card there).
+I was lucky enough to win a trip to the Raspberry Pi Pioneers Summer Camp at Google HQ, and while I was there I needed to write a simple Python program to let me control the robot I built in just an hour (including testing time!) so I recreated what I made and put it on GitHub for people to check out (unfortunately I had to rewrite it all because I left my SD card there).
 
 ## What You'll Need
 
